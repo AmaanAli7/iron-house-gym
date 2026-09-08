@@ -164,3 +164,115 @@ body {
   box-shadow:
     0 20px 60px rgba(229, 9, 20, 0.08);
 }
+
+/* =========================================
+   CINEMATIC GYM EXPERIENCE
+========================================= */
+
+.cinematic-video {
+  transform: scale(1.03);
+  filter: contrast(1.15) saturate(0.8);
+}
+
+.cinematic-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Film grain */
+
+.film-grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0.05;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  mix-blend-mode: screen;
+}
+
+/* Cinematic red glow */
+
+.cinematic-glow {
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.15),
+    0 0 100px rgba(229, 9, 20, 0.08);
+}
+
+/* Text glow */
+
+.hero-red-glow {
+  text-shadow:
+    0 0 15px rgba(229, 9, 20, 0.4),
+    0 0 60px rgba(229, 9, 20, 0.15);
+}
+
+/* Scanline */
+
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  opacity: 0.025;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.4) 4px
+  );
+}
+
+/* Page transition */
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+/* Video fallback */
+
+video {
+  background: #050505;
+}
+/* =========================================
+   CINEMATIC EXPERIENCE
+========================================= */
+
+.hero-red-glow {
+  text-shadow:
+    0 0 15px rgba(229, 9, 20, 0.45),
+    0 0 50px rgba(229, 9, 20, 0.2);
+}
+
+.scanlines {
+  pointer-events: none;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.25) 4px
+  );
+
+  opacity: 0.025;
+}
+
+video {
+  background: #050505;
+}
+
+audio {
+  display: none;
+}
